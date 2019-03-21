@@ -2,6 +2,8 @@
 #include "MPU6050.h"
 #include "Wire.h"
 #include "I2Cdev.h"
+#include"Filter.h"
+#include"first_pid.h"
 MPU6050 Mpu6050;
 int16_t ax, ay, az,gx, gy, gz;
 void setup() {
@@ -11,8 +13,6 @@ void setup() {
 }
 
 void loop() {
-  
    Mpu6050.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
-   Serial.println(ax);
- 
+   KalFilter.Angletest(ax, ay, az, gx, gy, gz, dt, Q_angle, Q_gyro, R_angle, C_0, K1);          //通过卡尔曼滤波获取角度
   }
