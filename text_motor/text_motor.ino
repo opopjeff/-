@@ -1,9 +1,11 @@
+#include"motor.h"
 void setup() {
-  // put your setup code here, to run once:
-
+  motorInitial();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  controlAC();
+  //controlBD();
+  delay(1000);
 
 }
