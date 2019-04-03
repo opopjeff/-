@@ -22,10 +22,8 @@ void loop() {
    Mpu6050.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
    KalFilter_x.Angletest_x(ax,az,gz,gy); 
    KalFilter_y.Angletest_y(ay,az,gz,gx);
-   
-    //=======================================================================
+      
    //filter_res = low_filter(KalFilter_x.angle6+38.2,0.05);
-   //======================================================================
 
    Serial.print(KalFilter_x.angle6+38.2);Serial.print(" ");
    //Serial.print(filter_res);Serial.print(" ");
