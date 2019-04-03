@@ -3,15 +3,15 @@
 #include"arduino.h"
 
 #define PWMA 10
-#define PWMB 9
-#define PWMC 5
+#define PWMC 9
+#define PWMB 5
 #define PWMD 6
 #define A1 1
 #define A2 2
-#define B1 7
-#define B2 8
-#define C1 13
-#define C2 12
+#define C1 7
+#define C2 8
+#define B1 13
+#define B2 12
 #define D1 4
 #define D2 0
 
@@ -112,4 +112,20 @@ void MOTOR::motor_D(int d){
 }
 
 MOTOR motor;
+
+void motorInitial()
+{
+pinMode(A1,OUTPUT);
+pinMode(A2,OUTPUT);
+pinMode(PWMA,OUTPUT);
+pinMode(B1,OUTPUT);
+pinMode(B2,OUTPUT);
+pinMode(PWMC,OUTPUT);
+pinMode(C1,OUTPUT);
+pinMode(C2,OUTPUT);
+pinMode(PWMC,OUTPUT);
+pinMode(D1,OUTPUT);
+pinMode(D2,OUTPUT);
+pinMode(PWMD,OUTPUT);
+}
 #endif
